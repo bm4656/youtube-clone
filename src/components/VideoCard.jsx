@@ -1,8 +1,5 @@
 import React from 'react';
-import { format, register } from 'timeago.js';
-import koLocale from 'timeago.js/lib/lang/ko';
-
-register('ko', koLocale);
+import { formatAgo } from '../util/date';
 
 export default function VideoCard({ video }) {
   const { title, thumbnails, channelTitle, publishedAt } = video.snippet;
@@ -12,7 +9,7 @@ export default function VideoCard({ video }) {
       <div>
         <h2>{title}</h2>
         <p>{channelTitle}</p>
-        <p>{format(publishedAt, 'ko')}</p>
+        <p>{formatAgo(publishedAt)}</p>
       </div>
     </li>
   );
