@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import SearchHeader from './components/SearchHeader';
@@ -11,6 +12,7 @@ function App() {
       <SearchHeader />
       <YoutubeApiProvider>
         <QueryClientProvider client={queryClient}>
+          <ReactQueryDevtools initialIsOpen={false} />
           <Outlet />
         </QueryClientProvider>
       </YoutubeApiProvider>
