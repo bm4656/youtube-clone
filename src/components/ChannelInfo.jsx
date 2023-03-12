@@ -5,8 +5,8 @@ import { useYoutubeApi } from '../context/YoutubeApiContext';
 export default function ChannelInfo({ id, name }) {
   const { youtube } = useYoutubeApi();
   const {
-    error,
-    isLoading,
+    // error,
+    // isLoading,
     data: url,
   } = useQuery(['channel', id], () => youtube.channelImageUrl(id), {
     staleTime: 1000 * 60 * 5,
